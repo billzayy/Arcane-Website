@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#container > img{
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}
+.login-container, .register-container{
+    background-color: #fff;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+}
+.id-client{
+    display: none;
+}
+.login-container{
+    display:flex;
+}
+
+.register-container{
+    display: none;
+}
+
+.login-container > div , .register-container > div{
+    padding: 10px;
+}
+.login-container > img, .register-container > img{
+    width: 20%;
+}
+
+[class^="input-"]{
+    padding: 5px;
+}
+
+.box > p{
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.login-btn, .register-btn{
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.login-btn:hover, .register-btn:hover{
+    cursor: pointer;
+}
+
+.register-link span{ 
+    color: blue;
+}
+
+.register-link span:hover{
+    cursor: pointer;
+}
+
+.social-link{
+    display: flex;
+}
+
+.social-btn{
+    display: flex;
+    margin: 0 10px;
+    color: white;
+    padding: 10px;
+    opacity: 0.5;
+    align-items: center;
+    transition: linear 0.2s;
+    border-radius: 5px;
+}
+.social-btn:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.fab{
+    margin: 0 5px;
+}
+
+.social-btn:nth-child(1){
+    background-color: #4267B2;
+}
+.social-btn:nth-child(2){
+    background-color: black;
+}
+.social-btn:nth-child(3){
+    background-color: #DB4437;
+}
+
+/* Register */
