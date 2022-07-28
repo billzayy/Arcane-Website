@@ -15,6 +15,11 @@ We have some pages for this project :
 * Responsive
 
 --------------------------------
+## Things you need to install before run
+```
+npm install
+```
+--------------------------------
 ## Database:
 Tables :
 - Login ( Id_Login, UserName, Password, FullName, Picture )
