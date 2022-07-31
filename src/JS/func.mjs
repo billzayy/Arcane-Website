@@ -78,14 +78,32 @@ function scrollPage() {
 
 function moveCart() {
     cartBtn.addEventListener('click', () => {
-        location.href = "http://localhost:3000/cart"
+        if (sessionStorage.getItem('user') == null) {
+            alert("Please Sign in!!!");
+            location.href = "http://localhost:3000/login"
+        }
+        else {
+            location.href = "http://localhost:3000/cart"
+        }
     })
 }
 
+async function countCart() {
+    const btnCart = document.querySelector('.btn-cart span')
+    let idClient = parseInt(sessionStorage.getItem('idClient'))
+    let sum = 0;
+    const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+    const data = await res.json()
+    data.forEach(i => {
+        sum = sum + i.Quantity;
+    })
+    btnCart.innerHTML = `(${sum})`
+}
 export {
     changeColorSale,
     setUser,
     logoutAct,
     scrollPage,
     moveCart,
+    countCart
 }

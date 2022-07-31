@@ -7,7 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
     alias.setUser();
     alias.logoutAct();
     alias.scrollPage();
-    alias.moveCart()
+    alias.moveCart();
+    alias.countCart();
+
     iconClick();
     showProduct();
     showProduct2();
@@ -96,7 +98,7 @@ async function showProduct2() {
         alias.changeColorSale(sale[i], price[i]);
     }
     detailProduct(idProduct, listBtn)
-    addCart(idProduct)
+    cartFeature(idProduct)
 }
 
 function iconClick() {
@@ -124,15 +126,29 @@ function detailProduct(id, styleBtn) {
     }
 }
 
-function addCart(id) {
+function cartFeature(id) {
     const cartBtn = document.querySelectorAll('.info-btn')
+    let arrCheck = [];
     for (let i = 0; i < cartBtn.length; i++){
         cartBtn[i].addEventListener('click', async () => {
             try {
                 let idClient = parseInt(sessionStorage.getItem('idClient'))
-                let idNum = parseInt(id[i].textContent)
-                await fetch(`http://localhost:3000/api/shoppingcart/add/${idClient}/${idNum}`)
-                alert("Add to cart Successful !")
+                let idProduct = parseInt(id[i].textContent)
+
+                const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+                const data = await res.json()
+                data.forEach(i => {
+                    arrCheck.push(i.Id_Product)
+                })
+
+                let counter = countArr(arrCheck, idProduct)
+
+                if (counter == 0) {
+                    addToCart(idClient, idProduct);
+                }
+                else if(counter >=1){
+                    updateCart(idClient, idProduct, counter)
+                }
             }
             catch {
                 alert("Error Add to ShoppingCart!")
@@ -140,4 +156,43 @@ function addCart(id) {
             }
         })
     }
+}
+
+function sortArr(arr) {
+    let temp = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[i]) {
+                temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp
+            }
+        }
+    }
+    return arr
+}
+
+function countArr(arr, idProduct) {
+    let sum = 0;
+    const sorted = sortArr(arr)
+    for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] == idProduct) {
+            sum++;
+        }
+        else if (sorted[i] == sorted[sorted.length - 1]) {
+            break;
+        }
+    }
+    return sum
+}
+
+async function addToCart(idClient, idProduct) {
+    await fetch(`http://localhost:3000/api/shoppingcart/add/${idClient}/${idProduct}/${1}/${null}`)
+    alert("Add to cart Successful !")
+}
+
+async function updateCart(idClient, idProduct, counter) {
+    const result = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${counter}/${null}`)
+    const dataset = await result.json()
+    console.log(dataset)
 }

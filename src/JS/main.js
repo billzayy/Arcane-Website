@@ -1,4 +1,4 @@
-import { changeColorSale, setUser, logoutAct, scrollPage, moveCart } from './func.mjs'
+import * as funcs from './func.mjs'
 
 const clothes = document.querySelector('#clothes');
 const deco = document.querySelector('#deco');
@@ -12,10 +12,12 @@ goCategory.forEach(i => {
 })
 
 window.addEventListener("DOMContentLoaded", () => { 
-    setUser();
-    logoutAct();
-    scrollPage();
-    moveCart();
+    funcs.setUser();
+    funcs.logoutAct();
+    funcs.scrollPage();
+    funcs.moveCart();
+    funcs.countCart()
+
     mainClothes();
     mainDeco();
     mainOther();
@@ -54,7 +56,7 @@ function mainClothes() {
             const price = document.querySelectorAll('.price');
             const sale = document.querySelectorAll('.special');
             for (let i = 0; i < price.length; i++) { 
-                changeColorSale(sale[i],price[i]);
+                funcs.changeColorSale(sale[i],price[i]);
             }
         }).then(() => {
             const sectionBtn = document.querySelectorAll('section');
@@ -136,7 +138,7 @@ function mainOther() {
             const price = document.querySelectorAll('#other .price');
             const sale = document.querySelectorAll('#other .special');
             for (let i = 0; i < price.length; i++) {
-                changeColorSale(sale[i], price[i]);
+                funcs.changeColorSale(sale[i], price[i]);
             }
         }).then(() => {
             const sectionBtn = document.querySelectorAll('section');

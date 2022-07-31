@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/src/index.html");
 })
 
+// Login
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/src/login.html');
 })
@@ -24,11 +25,24 @@ app.get('/login/:username/:password/:email', (req, res) => {
         res.send(recordset)
     })
 })
+app.get('/api/login', (req, res) => {
+    sql.conSQL("Select * From Login", (recordset) => {
+        res.send(recordset)
+    })
+})
 
+// Category & Product
 app.get('/category', (req, res) => {
     res.sendFile(__dirname + '/src/category.html')
 })
 
+app.get('/api/product', (req, res) => {
+    sql.conSQL("Select * from Product", (recordset) => {
+        res.send(recordset)
+    })
+})
+
+// Detail
 app.get('/detail', (req, res) => {
     res.sendFile(__dirname + '/src/detail.html')
 })
@@ -40,29 +54,52 @@ app.get('/api/detail/:id', (req, res) => {
     })
 })
 
-app.get('/api/product', (req, res) => {
-    sql.conSQL("Select * from Product", (recordset) => {
-        res.send(recordset)
-    })
-})
-
-app.get('/api/login', (req, res) => {
-    sql.conSQL("Select * From Login", (recordset) => {
-        res.send(recordset)
-    })
-})
-
+// Shopping Cart
 app.get('/cart', (req, res) => {
     res.sendFile(__dirname + '/src/cart.html')
 })
 
-app.get('/api/cart', (req, res) => {
+app.get('/api/shoppingcart/:client', (req, res) => {
+    var client = req.params['client']
+    sql.conSQL(`select * from ShoppingCart S 
+                Left join Product P 
+                on S.Id_Product = P.Id_Product
+                where S.Id_Client = ${client}
+                order by S.Id_Product ASC`, (recordset) => {
+        res.send(recordset)
+    })
+})
+
+app.get('/api/shoppingcart/add/:client/:product/:quantity/:size', (req, res) => {
+    var idClient = req.params['client'];
+    var idProduct = req.params['product'];
+    var quantity = req.params['quantity'];
+    var size = req.params['size'];
+    sql.conSQL(`Insert into ShoppingCart(Id_Client,Id_Product,Quantity,Size) Values (${idClient},${idProduct},${quantity},'${size}')`, (recordset) => {
+        res.send(recordset)
+    })
+})
+
+app.get('/api/shoppingcart/update/quantity/:client/:product/:quantity/:size', (req, res) => {
+    var idClient = req.params['client'];
+    var idProduct = req.params['product'];
+    var quantity = req.params['quantity'];
+    var size = req.params['size'];
+    sql.conSQL(`update ShoppingCart 
+        set Quantity = ${quantity}, Size ='${size}'
+        Where Id_Product = ${idProduct} AND Id_Client = ${idClient}`, (recordset) => {
+        res.send(recordset)
+    })
+})
+
+app.get('/api/bill', (req, res) => {
     sql.conSQL("Select * From Bills", (recordset) => {
         res.send(recordset)
     })
 })
 
-app.get('/api/cart/:product/:client/:date', (req, res) => {
+// Bills
+app.get('/api/bill/:product/:client/:date', (req, res) => {
     var idProduct = req.params['product'];
     var idClient = req.params['client'];
     var date = req.params['date'];
@@ -72,7 +109,7 @@ app.get('/api/cart/:product/:client/:date', (req, res) => {
     })
 })
 
-app.get('/api/cart/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery', (req, res) => {
+app.get('/api/bill/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery', (req, res) => {
     var idBill = req.params['idBill'];
     var idProduct = req.params['product'];
     var sumPrice = req.params['sumPrice'];
@@ -84,25 +121,6 @@ app.get('/api/cart/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery
         res.send(recordset)
     })
 })
-
-app.get('/api/shoppingcart/:client', (req, res) => {
-    var client = req.params['client']
-    sql.conSQL(`select * from ShoppingCart S 
-                Left join Product P 
-                on S.Id_Product = P.Id_Product
-                where S.Id_Client = ${client}`, (recordset) => {
-        res.send(recordset)
-    })
-})
-
-app.get('/api/shoppingcart/add/:client/:product', (req, res) => {
-    var idClient = req.params['client'];
-    var idProduct = req.params['product'];
-    sql.conSQL(`Insert into ShoppingCart Values (${idClient},${idProduct})`, (recordset) => {
-        res.send(recordset)
-    })
-})
-
 app.listen(3000, () => {
     console.log("listening on 3000")
 })
