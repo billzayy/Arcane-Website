@@ -35,19 +35,7 @@ async function showCart() {
                                     <span class="cart-category">${item.P_Category}</span> for <span class="cart-gender">${item.P_Gender}</span>
                                 </div>
                                 <div class="cart-size">
-                                    <p>Size :</p> <span class="size-content">
-                                        <select name="Gender">
-                                            <option value="">Size</option>
-                                            <option value="XXS">XXS</option>
-                                            <option value="XS">XS</option>
-                                            <option value="S">S</option>
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                            <option value="XL">XL</option>
-                                            <option value="XXL">XXL</option>
-                                            <option value="XXXL">XXXL</option>
-                                        </select>                                    
-                                    </span>
+                                    <p>Size :</p> <span class="size-content">${item.Size}</span>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +62,8 @@ async function showCart() {
     const idProduct = document.querySelectorAll('.id-product')
     countSection()
     btnPrice(section, idProduct)
-    const opt = document.querySelectorAll('.size-content select option')
-    opt.forEach(i => {
-        console.log(i.value)
-    })
+    detailCart(idProduct)
+    deleteFunc(idProduct, section)
 }
 
 function btnPrice(section,idProduct) {
@@ -159,7 +145,7 @@ function countSection(operator) {
 
 async function dbQuantity(idProduct, quantity) {
     let idClient = parseInt(sessionStorage.getItem('idClient'))
-    const res = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${quantity}`)
+    const res = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${quantity}/${null}`)
     const data = await res.json();
     console.log(data)
 }
@@ -171,4 +157,32 @@ function inputValueChange(quantity) {
     else {
         return quantity
     }
+}
+
+function detailCart(id) {
+    const imgBtn = document.querySelectorAll('section img');
+    for(let i = 0; i < imgBtn.length; i++) {
+        imgBtn[i].addEventListener('click', () => {
+            sessionStorage.setItem('api', `http://localhost:3000/api/detail/${id[i].textContent}`)
+            location.href = `http://localhost:3000/detail/`
+        })
+    }
+}
+
+function deleteFunc(id, section) {
+    const removeBtn = document.querySelectorAll('.btn-delete')
+    let idClient = parseInt(sessionStorage.getItem('idClient'))
+
+    for (let i = 0; i < removeBtn.length; i++) {
+        removeBtn[i].addEventListener('click', () => {
+            section[i].remove()
+            deleteCart(idClient, parseInt(id[i].textContent))
+        })
+    }
+}
+
+async function deleteCart(idClient, idProduct) {
+    const result = await fetch(`http://localhost:3000/api/shoppingcart/remove/${idProduct}/${idClient}/`)
+    const dataset = await result.json()
+    console.log(dataset)
 }

@@ -80,7 +80,7 @@ function moveCart() {
     cartBtn.addEventListener('click', () => {
         if (sessionStorage.getItem('user') == null) {
             alert("Please Sign in!!!");
-            location.href = "http://localhost:3000/login"
+            location.reload();
         }
         else {
             location.href = "http://localhost:3000/cart"

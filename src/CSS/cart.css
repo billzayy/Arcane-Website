@@ -152,9 +152,13 @@ li {
 }
 
 .cart-content section > img{
-    width: 8%;
+    width: 120px;
+    height: 120px;
 }
-
+.cart-content section > img:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
+}
 .id-product{
     display: none;
 }
@@ -265,7 +269,7 @@ li {
 .cart-summary{
     background-color: #E9E9E9;
     border: 1px solid black;
-    margin: 0 20px;
+    margin: 0 20px 0 40px;
     padding: 15px;
     width: 15%;
     height: 120%;

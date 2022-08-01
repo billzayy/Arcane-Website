@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 // Login
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/src/login.html');
+    res.sendFile(__dirname + '/src/HTML/login.html');
 })
 
 app.get('/login/:username/:password/:email', (req, res) => {
@@ -33,7 +33,7 @@ app.get('/api/login', (req, res) => {
 
 // Category & Product
 app.get('/category', (req, res) => {
-    res.sendFile(__dirname + '/src/category.html')
+    res.sendFile(__dirname + '/src/HTML/category.html')
 })
 
 app.get('/api/product', (req, res) => {
@@ -44,7 +44,7 @@ app.get('/api/product', (req, res) => {
 
 // Detail
 app.get('/detail', (req, res) => {
-    res.sendFile(__dirname + '/src/detail.html')
+    res.sendFile(__dirname + '/src/HTML/detail.html')
 })
 
 app.get('/api/detail/:id', (req, res) => {
@@ -56,7 +56,7 @@ app.get('/api/detail/:id', (req, res) => {
 
 // Shopping Cart
 app.get('/cart', (req, res) => {
-    res.sendFile(__dirname + '/src/cart.html')
+    res.sendFile(__dirname + '/src/HTML/cart.html')
 })
 
 app.get('/api/shoppingcart/:client', (req, res) => {
@@ -92,13 +92,21 @@ app.get('/api/shoppingcart/update/quantity/:client/:product/:quantity/:size', (r
     })
 })
 
+app.get('/api/shoppingcart/remove/:product/:client', (req, res) => {
+    var idProduct = req.params['product'];
+    var idClient = req.params['client'];
+    sql.conSQL(`DELETE FROM ShoppingCart WHERE Id_Product = ${idProduct} AND Id_Client = ${idClient}`, (recordset) => {
+        res.send(recordset)
+    })
+})
+
+// Bills
 app.get('/api/bill', (req, res) => {
     sql.conSQL("Select * From Bills", (recordset) => {
         res.send(recordset)
     })
 })
 
-// Bills
 app.get('/api/bill/:product/:client/:date', (req, res) => {
     var idProduct = req.params['product'];
     var idClient = req.params['client'];
