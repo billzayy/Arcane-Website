@@ -99,11 +99,19 @@ async function countCart() {
     })
     btnCart.innerHTML = `(${sum})`
 }
+
+function moveContact() {
+    const contactBtn = document.querySelector('.contact-btn');
+    contactBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/contact'
+    })
+}
 export {
     changeColorSale,
     setUser,
     logoutAct,
     scrollPage,
     moveCart,
-    countCart
+    countCart,
+    moveContact
 }

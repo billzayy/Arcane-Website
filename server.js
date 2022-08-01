@@ -129,6 +129,11 @@ app.get('/api/bill/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery
         res.send(recordset)
     })
 })
+
+// Contact
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/contact.html')
+})
 app.listen(3000, () => {
     console.log("listening on 3000")
 })
