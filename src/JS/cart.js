@@ -10,12 +10,29 @@ window.addEventListener("DOMContentLoaded", () => {
     alias.moveCart();
     alias.countCart();
 
-    showCart()
+    cart()
 })
 
 goBack.addEventListener('click', () => {
     window.location.href = "http://localhost:3000/category"
 })
+
+async function cart() {
+    const nothingText = document.querySelector('.none-section')
+    const cartSummary = document.querySelector('.cart-summary')
+    const url = sessionStorage.getItem('idClient')
+    const res = await fetch(`/api/shoppingcart/${url}`)
+    const data = await res.json();
+    if (data.length == 0) {
+        nothingText.style.display = "flex"
+        cartSummary.style.display = "none"
+    }
+    else {
+        nothingText.style.display = "none"
+        cartSummary.style.display = "block"
+        showCart()
+    }
+}
 
 async function showCart() {
     let result = "";
@@ -54,7 +71,7 @@ async function showCart() {
                             </div>
                         </div>
                     </div>
-                </section>  
+                </section>
             `
         sectionShow.innerHTML = result
     })
@@ -177,6 +194,7 @@ function deleteFunc(id, section) {
         removeBtn[i].addEventListener('click', () => {
             section[i].remove()
             deleteCart(idClient, parseInt(id[i].textContent))
+            location.reload()
         })
     }
 }

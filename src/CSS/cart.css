@@ -144,7 +144,11 @@ li {
 .cart-content .cart-left{
     border-top: 1px solid lightgray;
 }
-
+.cart-content .none-section{
+    font-size: 30px;
+    color: lightgray;
+    margin-top: 20px;
+}
 .cart-content section{
     display: flex;
     padding: 10px;
