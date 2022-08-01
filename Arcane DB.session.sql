@@ -6,6 +6,7 @@
 --     Password    VARCHAR(255)        NOT NULL,
 --     FullName    VARCHAR(255)        NULL,
 --     Picture     VARCHAR  (255)      NULL
+--     Email       VARCHAR(255)       NULL,
 -- );
 
 -- CREATE TABLE Contact(
@@ -18,7 +19,6 @@
 -- CREATE TABLE Product(
 --     Id_Product      INT             PRIMARY KEY      AUTO_INCREMENT  NOT NULL,
 --     P_Name          NVARCHAR(255)   NOT NULL,
---     P_Title         NVARCHAR(255)   NOT NULL,
 --     P_Picture       NVARCHAR(255)   NOT NULL,
 --     P_Describe      NVARCHAR(255)   NOT NULL,
 --     P_Price         INT             NOT NULL,
@@ -57,6 +57,8 @@
 -- CREATE TABLE ShoppingCart(
 --     Id_Client   INT,
 --     Id_Product INT,
+--     Quantity INT NULL,
+--     Size       VARCHAR(255)
 --     FOREIGN KEY (Id_Client) REFERENCES Login (Id_Login),
 --     FOREIGN KEY (Id_Product) REFERENCES Product (Id_Product)
 -- );
@@ -125,3 +127,7 @@
 -- INSERT INTO Login VALUES
 -- ('admin','admin',NULL, NULL),
 -- ('bill','2010','Phan Le Tuan','./src/img/User/Bill .jpeg');
+
+-- -- Contact
+-- INSERT INTO Contact Values
+-- ('Everyday, 9 am - 8 pm','The USA, Phoenix. 27 West Park','e_commerce@arcane.com','+1(800)470-90-70','../img/Main/Ellipse 7.png')

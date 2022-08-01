@@ -134,6 +134,13 @@ app.get('/api/bill/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery
 app.get('/contact', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/contact.html')
 })
+
+app.get('/api/contact', (req, res) => {
+    sql.conSQL("Select * FROM Contact", (recordset) => {
+        res.send(recordset)
+    })
+})
+
 app.listen(3000, () => {
     console.log("listening on 3000")
 })

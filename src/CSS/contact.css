@@ -135,13 +135,14 @@ li {
     font-weight: bold;
     margin-bottom: 2rem;
 }
-
 .content{
+    position: relative;
+}
+.content-text{
     display: flex;
     width: 100%;
     justify-content: center;
     margin: 10px 0;
-    position: relative;
 }
 
 .content-left{
