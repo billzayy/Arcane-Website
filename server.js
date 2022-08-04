@@ -141,6 +141,16 @@ app.get('/api/contact', (req, res) => {
     })
 })
 
+// User
+app.get('/user', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/user.html');
+})
+
+app.get('/api/user', (req, res) => {
+    sql.conSQL("Select * FROM Login", (recordset) => {
+        res.send(recordset)
+    })
+})
 app.listen(3000, () => {
     console.log("listening on 3000")
 })

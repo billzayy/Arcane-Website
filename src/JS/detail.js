@@ -143,16 +143,21 @@ function cartFeature(id) {
     let idClient = parseInt(sessionStorage.getItem('idClient'))
     let cartArr = [];
     cartBtn.addEventListener('click', async () => {
-        const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
-        const data = await res.json()
-        data.forEach((item) => {
-            cartArr.push(item.Id_Product)
-        })
-        if (cartArr.includes(id) == false) {
-            addToCart(idClient, id, quantityBox.value, sizeBox.textContent)
+        if (Number.isNaN(idClient)) {
+            alert("Welcome Guest ! Please sign up or log in to buy our products !")
         }
         else {
-            updateCart(idClient, id, quantityBox.value, sizeBox.textContent)
+            const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+            const data = await res.json()
+            data.forEach((item) => {
+                cartArr.push(item.Id_Product)
+            })
+            if (cartArr.includes(id) == false) {
+                addToCart(idClient, id, quantityBox.value, sizeBox.textContent)
+            }
+            else {
+                updateCart(idClient, id, quantityBox.value, sizeBox.textContent)
+            }
         }
     })
 }

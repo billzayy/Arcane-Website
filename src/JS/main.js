@@ -17,7 +17,8 @@ window.addEventListener("DOMContentLoaded", () => {
     funcs.scrollPage();
     funcs.moveCart();
     funcs.countCart()
-    funcs.moveContact()
+    funcs.moveContact();
+    funcs.moveProfile();
 
     mainClothes();
     mainDeco();

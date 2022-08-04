@@ -49,7 +49,7 @@ function logoutAct() {
     }
 
     logoutBtn.addEventListener('click', () => {
-        window.localStorage.removeItem("user");
+        sessionStorage.clear();
         window.location.href = "http://localhost:3000/login"
     })
 }
@@ -92,18 +92,31 @@ async function countCart() {
     const btnCart = document.querySelector('.btn-cart span')
     let idClient = parseInt(sessionStorage.getItem('idClient'))
     let sum = 0;
-    const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
-    const data = await res.json()
-    data.forEach(i => {
-        sum = sum + i.Quantity;
-    })
-    btnCart.innerHTML = `(${sum})`
+    if (Number.isNaN(idClient)) {
+        alert("Welcome Guest ! Please sign up or log in to buy our products !")
+        btnCart.innerHTML = ``
+    }
+    else {
+        const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+        const data = await res.json()
+        data.forEach(i => {
+            sum = sum + i.Quantity;
+        })
+        btnCart.innerHTML = `(${sum})`
+    }
 }
 
 function moveContact() {
     const contactBtn = document.querySelector('.contact-btn');
     contactBtn.addEventListener('click', () => {
         location.href = 'http://localhost:3000/contact'
+    })
+}
+
+function moveProfile() {
+    const profileBtn = document.querySelector('.btn-profile');
+    profileBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/user'
     })
 }
 export {
@@ -113,5 +126,6 @@ export {
     scrollPage,
     moveCart,
     countCart,
-    moveContact
+    moveContact,
+    moveProfile
 }
