@@ -13,7 +13,9 @@
 --     Work_hour   Nvarchar(255)   NOT NULL,
 --     Address     NVARCHAR(255)   NOT NULL,
 --     Email       Nvarchar(255)   NOT NULL,
---     Phone       NvARCHAR(11)    NOT NULL
+--     Phone       NVARCHAR(11)    NOT NULL,
+--     Map         NVARCHAR(255)   NOT NULL,
+--     Title       NVARCHAR(255)   NOT NULL
 -- );
 
 -- CREATE TABLE Product(
@@ -36,20 +38,20 @@
 
 -- CREATE TABLE Bills(
 --     Id_Bill         INT     PRIMARY KEY      AUTO_INCREMENT NOT NULL,
---     Id_Product      INT     NOT NULL,
 --     Id_Client       INT     NOT NULL,
 --     B_BuyDate       Nvarchar(255)   NOT NUll,
+--     B_Discount      INT         NOT NULL,
+--     B_Delivery      NVARCHAR(55) NOT NULL,
+--     P_SumPrice      INT         NOT NULL,
 --     FOREIGN KEY(Id_Product) REFERENCES Product(Id_Product),
 --     FOREIGN KEY(Id_Client) REFERENCES Login(Id_Login)
 -- );
 
 -- CREATE TABLE Bills_Info(
---     Id_Bill         INT         NOT NULL,
---     Id_Product      INT         NOT NULL,
---     P_SumPrice      INT         NOT NULL,
---     B_Quantity      INT         NOT NULL,
---     B_Discount      INT         NOT NULL,
---     B_Delivery      NVARCHAR(55) NOT NULL,
+--     Id_Bill         INT          NOT NULL,
+--     Id_Product      INT          NOT NULL,
+--     B_Quantity      INT          NOT NULL,
+--     P_Size          VARCHAR(255) NULL,
 --     FOREIGN KEY (Id_Bill) REFERENCES Bills(Id_Bill),
 --     FOREIGN KEY (Id_Product) REFERENCES Product(Id_Product)
 -- );
@@ -130,4 +132,4 @@
 
 -- -- Contact
 -- INSERT INTO Contact Values
--- ('Everyday, 9 am - 8 pm','The USA, Phoenix. 27 West Park','e_commerce@arcane.com','+1(800)470-90-70','../img/Main/Ellipse 7.png')
+-- ('Everyday, 9 am - 8 pm','The USA, Phoenix. 27 West Park','e_commerce@arcane.com','+1(800)470-90-70','../img/Main/Ellipse 7.png','WE ALWAYS GLAD TO SEE YOU IN OUR STORE !')

@@ -107,6 +107,12 @@ app.get('/api/bill', (req, res) => {
     })
 })
 
+app.get('/api/bill/info', (req, res) => {
+    sql.conSQL("Select * From Bills_Info", (recordset) => {
+        res.send(recordset)
+    })
+})
+
 app.get('/api/bill/:product/:client/:date', (req, res) => {
     var idProduct = req.params['product'];
     var idClient = req.params['client'];
