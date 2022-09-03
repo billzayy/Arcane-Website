@@ -93,7 +93,7 @@ async function countCart() {
     let idClient = parseInt(sessionStorage.getItem('idClient'))
     let sum = 0;
     if (Number.isNaN(idClient)) {
-        alert("Welcome Guest ! Please sign up or log in to buy our products !")
+        // alert("Welcome Guest ! Please sign up or log in to buy our products !")
         btnCart.innerHTML = ``
     }
     else {

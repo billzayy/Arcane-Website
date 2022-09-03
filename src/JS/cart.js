@@ -1,4 +1,6 @@
 import * as alias from './func.mjs'
+import * as check from './checkout.mjs'
+import { btnPrice, inputValueChange } from './money_change.mjs';
 
 const goBack = document.querySelector('.go-back');
 const sectionShow = document.querySelector('.cart-left')
@@ -10,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     alias.moveCart();
     alias.countCart();
     alias.moveContact();
+    alias.moveProfile();
 
     cart()
 })
@@ -78,103 +81,9 @@ async function showCart() {
     })
     const section = document.querySelectorAll('section')
     const idProduct = document.querySelectorAll('.id-product')
-    countSection()
     btnPrice(section, idProduct)
     detailCart(idProduct)
     deleteFunc(idProduct, section)
-}
-
-function btnPrice(section,idProduct) {
-    const btnPlus = document.querySelectorAll('.price-btn .fa-plus');
-    const btnMinus = document.querySelectorAll('.price-btn .fa-minus');
-    const numBox = document.querySelectorAll('#counter')
-    const price = document.querySelectorAll('.cart-price span');
-    const priceBox = document.querySelector('.order-total span')
-
-    let sum = []; 
-    for (let i = 0; i < section.length; i++) {
-        sum[i] = parseInt(price[i].textContent)
-        btnPlus[i].addEventListener('click', () => {
-            numBox[i].value++;
-            sum[i] = definePrice(i,price, numBox)
-            priceBox.innerHTML = `$${addPrice(sum)}`
-            dbQuantity(parseInt(idProduct[i].textContent),numBox[i].value)
-            countSection("add")
-        })
-
-        btnMinus[i].addEventListener('click', () => {
-            if (numBox[i].value != 1) {
-                numBox[i].value--;
-                sum[i] = definePrice(i, price, numBox)
-                priceBox.innerHTML = `$${Math.abs(minusPrice(sum))}`
-                dbQuantity(parseInt(idProduct[i].textContent), numBox[i].value)
-                countSection("minus")
-            }
-            else {
-                numBox[i].value = 1;
-            }
-        })
-    }
-    priceBox.innerHTML = `$${addPrice(sum)}`
-}
-
-function definePrice(i,price,numBox) {
-    let result = parseInt(price[i].textContent) * parseInt(numBox[i].value);
-    return result
-}
-
-function addPrice(arr) {
-    let result = 0
-    arr.forEach(i => {
-        result = result + i
-    })
-    return result
-}
-
-function minusPrice(arr) {
-    let result = 0
-    arr.forEach(i => {
-        result = result - i
-    })
-    return result
-}
-
-function countSection(operator) {
-    const orderItem = document.querySelector('.order-items span');
-    const counterItems = document.querySelectorAll('.price-btn #counter');
-    const btnCart = document.querySelector('.btn-cart span')
-    let sum = 0;
-
-    if (operator == 'minus') {
-        counterItems.forEach(item => {
-            sum -= parseInt(item.value)
-        })
-        // sessionStorage.setItem('countProduct',Math.abs(sum))
-    }
-    else {
-        counterItems.forEach(item => {
-            sum += parseInt(item.value)
-        })
-        // sessionStorage.setItem('countProduct',Math.abs(sum))
-    }
-    orderItem.innerHTML = Math.abs(sum)
-    btnCart.innerHTML = `(${Math.abs(sum)})`
-}
-
-async function dbQuantity(idProduct, quantity) {
-    let idClient = parseInt(sessionStorage.getItem('idClient'))
-    const res = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${quantity}/${null}`)
-    const data = await res.json();
-    console.log(data)
-}
-
-function inputValueChange(quantity) {
-    if (quantity == null) {
-        return 1
-    }
-    else {
-        return quantity
-    }
 }
 
 function detailCart(id) {

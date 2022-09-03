@@ -101,7 +101,7 @@ app.get('/api/shoppingcart/remove/:product/:client', (req, res) => {
 })
 
 // Bills
-app.get('/api/bill', (req, res) => {
+app.get('/api/bill/showApi', (req, res) => {
     sql.conSQL("Select * From Bills", (recordset) => {
         res.send(recordset)
     })
@@ -113,17 +113,19 @@ app.get('/api/bill/info', (req, res) => {
     })
 })
 
-app.get('/api/bill/:product/:client/:date', (req, res) => {
-    var idProduct = req.params['product'];
+app.get('/api/bill/add/:client/:date/:discount/:delivery/:price', (req, res) => {
     var idClient = req.params['client'];
     var date = req.params['date'];
+    var discount = req.params['discount'];
+    var delivery = req.params['delivery'];
+    var price = req.params['price'];
 
-    sql.conSQL(`Insert into Bills(Id_Product, Id_Client,B_BuyDate) Values (${idProduct},${idClient}, '${date}')`, (recordset) => {
+    sql.conSQL(`Insert into Bills(Id_Client,B_BuyDate, B_Discount, B_Delivery, B_SumPrice) Values (${idClient}, '${date}', '${discount}', '${delivery}',${price})`, (recordset) => {
         res.send(recordset)
     })
 })
 
-app.get('/api/bill/info/:idBill/:product/:sumPrice/:quantity/:discount/:delivery', (req, res) => {
+app.get('/api/bill/info/add/:idBill/:product/:sumPrice/:quantity/:discount/:delivery', (req, res) => {
     var idBill = req.params['idBill'];
     var idProduct = req.params['product'];
     var sumPrice = req.params['sumPrice'];

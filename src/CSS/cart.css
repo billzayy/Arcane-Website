@@ -204,7 +204,7 @@ li {
 .cart-size .size-content{
     color: black;
     opacity: 1;
-    margin: 0 4px;
+    margin-left:2px;
 }
 
 .cart-product-price{

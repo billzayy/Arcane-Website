@@ -61,7 +61,205 @@
     </div>
 
     <div id="main">
-        
+        <div class="side-bar">
+            <div class="personal-section">
+                <div class="title-personal">
+                    <h3>Personal</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                <ul class="personal-btn">
+                    <li>Profile</li>
+                    <li>History</li>
+                    <li>Setting</li>
+                </ul>
+            </div>
+            <div class="admin-section">
+                <div class="title-admin">
+                    <h3>Admin</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+                <ul class="admin-btn">
+                    <li>User Management</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <div class="logout-section">
+                <i class="fas fa-sign-out-alt">Log out</i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="profile-container">
+                <div class="picture-section">
+                    <img src="../img/Gradient.jpeg" alt="">  
+                    <div class="user">
+                        <div class="pic">
+                            <img src="../img/User/Bill .jpeg" alt="">
+                            <div class="side-btn">
+                                <a>Change</a>
+                                <a>Delete</a>
+                            </div>
+                        </div>
+                        <div class="username">
+                            <p>Phan Le Tuan</p>
+                            <p class="email">123@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="info-section">
+                    <div class="info">
+                        <div class="info-title">Full Name</div>
+                        <div class="info-content">
+                            <div class="info-text">
+                                <input type="text" value = "test">
+                                <p>Test Content</p>
+                            </div>
+                            <div class="btn">
+                                <a class="edit-btn">Edit</a>
+                                <a class="save-btn">Save</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="info-title">Email</div>
+                        <div class="info-content">
+                            <div class="info-text">
+                                <input type="text" value="test">
+                                <p>Test Content</p>
+                            </div>
+                            <div class="btn">
+                                <a class="edit-btn">Edit</a>
+                                <a class="save-btn">Save</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="info-title">UserName</div>
+                        <div class="info-content">
+                            <div class="info-text">
+                                <input type="text" value="test">
+                                <p>Test Content</p>
+                            </div>
+                            <div class="btn">
+                                <a class="edit-btn">Edit</a>
+                                <a class="save-btn">Save</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="info-title">Password</div>
+                        <div class="info-content">
+                            <div class="info-text">
+                                <input type="password" value="test">
+                                <p>Test Content</p>
+                            </div>
+                            <div class="btn">
+                                <a class="edit-btn">Edit</a>
+                                <a class="save-btn">Save</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="setting-container">
+                <h2>Settings</h2>
+                <div class="delete-section">
+                    <div class="delete-name">
+                        <p>Delete Account</p>
+                        <span>Once you delete your account, there is no going back. Please be certain.
+                        </span>
+                    </div>
+                    <div class="delete-btn">
+                        <button>Delete your account</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-container">
+                <h2>History</h2>
+                <table>
+                    <tr>
+                        <th>Id_Bills</th>
+                        <th>Buy Dates</th>
+                        <th>Sum Price</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Id_Bills</td>
+                        <td>Buy Dates</td>
+                        <td>Sum Price</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Id_Bills</td>
+                        <td>Buy Dates</td>
+                        <td>Sum Price</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="admin-container">
+                <div class="admin-user">
+                    <h2>User</h2>
+                    <table>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                            <th>Full Name</th>
+                            <th>Picture</th>
+                            <th>Function</th>
+                        </tr>
+                        <tr>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td>NULL</td>
+                            <td>Admin</td>
+                            <td>IMG</td>
+                            <td>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="admin-product">
+                    <h2>Product</h2>
+                    <table>
+                        <tr>
+                            <th>Id_Product</th>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Function</th>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>
+                                <img src="../img/Catalogue/Arcane-fire.png" alt="">
+                            </td>
+                            <td>Arcane Fire</td>
+                            <td>13</td>
+                            <td>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="footer">

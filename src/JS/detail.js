@@ -145,6 +145,7 @@ function cartFeature(id) {
     cartBtn.addEventListener('click', async () => {
         if (Number.isNaN(idClient)) {
             alert("Welcome Guest ! Please sign up or log in to buy our products !")
+            console.log("Nothing")
         }
         else {
             const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
@@ -165,10 +166,12 @@ function cartFeature(id) {
 async function addToCart(idClient, idProduct, quantity,size) {
     await fetch(`http://localhost:3000/api/shoppingcart/add/${idClient}/${idProduct}/${quantity}/${size}`)
     alert("Add to cart Successful !")
+    window.location.reload();
 }
 
 async function updateCart(idClient, idProduct, counter,size) {
     const result = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${counter}/${size}`)
     const dataset = await result.json()
     console.log(dataset)
+    window.location.reload();
 }

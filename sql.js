@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-function conSQL(strSQ,cb) {
+function conSQL(strSQL,cb) {
     const connectDB = mysql.createConnection({
         host: 'localhost',
         user: 'bill',
@@ -11,7 +11,7 @@ function conSQL(strSQ,cb) {
     connectDB.connect(function (err) {
         if (err) throw err;
         // console.log('Connected to the MySQL server.');
-        connectDB.query(strSQ, function (err, result) {
+        connectDB.query(strSQL, function (err, result) {
             if (err) throw(err);
             cb(result)
         })
