@@ -134,9 +134,19 @@ li {
 .side-bar{
     display:block;
 }
+
+.open{
+    display: block;
+}
+
 .close{
     display:none;
 }
+
+.rotate-btn{
+    transform: rotate(180deg);
+}
+
 .content{
     width: 80%;
     background-color: white;
@@ -240,11 +250,13 @@ li {
     padding: 25px;
     border-radius: 30px;
     opacity: 0.65;
+    width: 15%;
 }
 
 [class^="title-"]{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 li,[class^="title-"]:hover{
@@ -257,10 +269,6 @@ li,[class^="title-"]:hover{
 
 [class^="title-"] p{
     font-size: 20px;
-}
-
-.arrow .fa-caret-down{
-    display: none;
 }
 
 .logout-section{
