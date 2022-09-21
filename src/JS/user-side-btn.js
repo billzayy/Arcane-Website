@@ -1,61 +1,61 @@
-const profilePage = document.querySelector('.profile-container');
-const settingPage = document.querySelector('.setting-container');
-const historyPage = document.querySelector('.history-container');
-const adminPage = document.querySelector('.admin-container');
-const adminProduct = document.querySelector('.admin-product');
-const adminUser = document.querySelector('.admin-user');
+const profilePage = document.querySelectorAll('.personal-btn li');
+const adminPage = document.querySelectorAll('.admin-btn li');
 
-const personListBtn = document.querySelectorAll('.side-bar li');
+const listPerson = document.querySelector('.personal-btn');
+const listAdmin = document.querySelector('.admin-btn');
+const arrow = document.querySelectorAll('.arrow .fa-caret-up');
+
+// Button
+const personBtn = document.querySelector('.title-personal');
+const adminBtn = document.querySelector('.title-admin');
+const logoutBtn = document.querySelector('.logout-section')
+
 
 function sideBarBtn() {
-    personListBtn.forEach(i => {
-        i.addEventListener("click", () => {
-            var text = i.textContent;
-            console.log(text)
-            switch (text) {
-                case "Setting":
-                    profilePage.style.display = "none";
-                    settingPage.style.display = "block";
-                    historyPage.style.display = "none";
-                    adminPage.style.display = "none";
-                    adminProduct.style.display = "none";
-                    adminUser.style.display = "none";
+    personBtn.addEventListener("click", () => {
+        listPerson.classList.toggle('close')
+        arrow[0].classList.toggle('rotate-btn')
+    })
+
+    adminBtn.addEventListener("click", () => {
+        listAdmin.classList.toggle('close')
+        arrow[1].classList.toggle('rotate-btn')
+    })
+
+    logoutBtn.addEventListener("click", () => {
+        sessionStorage.clear();
+        window.location.href = "http://localhost:3000/login"
+    })
+
+    profilePage.forEach(i => {
+        i.addEventListener("click", (e) => {
+            switch (e.target.textContent.toLowerCase()) {
+                case "profile":
+                    location.href = "http://localhost:3000/user/profile";
                     break;
-                case "History":
-                    profilePage.style.display = "none";
-                    settingPage.style.display = "none";
-                    historyPage.style.display = "block";
-                    adminPage.style.display = "none";
-                    adminProduct.style.display = "none";
-                    adminUser.style.display = "none";
+                case "history":
+                    location.href = "http://localhost:3000/user/history";
                     break;
-                case "User Management":
-                    profilePage.style.display = "none";
-                    settingPage.style.display = "none";
-                    historyPage.style.display = "none";
-                    adminPage.style.display = "block";
-                    adminProduct.style.display = "none";
-                    adminUser.style.display = "block";
+                case "setting":
+                    location.href = "http://localhost:3000/user/setting";
                     break;
-                case "Product Management":
-                    profilePage.style.display = "none";
-                    settingPage.style.display = "none";
-                    historyPage.style.display = "none";
-                    adminPage.style.display = "block";
-                    adminProduct.style.display = "block";
-                    adminUser.style.display = "none";
+            }
+        })
+    })
+    adminPage.forEach(i => {
+        i.addEventListener("click", (e) => {
+            switch (e.target.textContent.toLowerCase()) {
+                case "user management":
+                    location.href = "http://localhost:3000/admin/user_management";
                     break;
-                default:
-                    profilePage.style.display = "block";
-                    settingPage.style.display = "none";
-                    historyPage.style.display = "none";
-                    adminProduct.style.display = "none";
-                    adminUser.style.display = "none";
+                case "product management":
+                    location.href = "http://localhost:3000/admin/product_management";
                     break;
             }
         })
     })
 }
+
 export {
     sideBarBtn
 }

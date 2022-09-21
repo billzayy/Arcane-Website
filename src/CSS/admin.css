@@ -126,28 +126,28 @@ li {
 
 #main {
     padding: 6.5rem 0 4rem 0;
-    display : flex;
+    display: flex;
     background-color: lightgray;
     justify-content: space-evenly;
 }
 
-.side-bar{
-    display:block;
-}
-
-.open{
+.side-bar {
     display: block;
 }
 
-.close{
-    display:none;
+.open {
+    display: block;
 }
 
-.rotate-btn{
+.close {
+    display: none;
+}
+
+.rotate-btn {
     transform: rotate(180deg);
 }
 
-.content{
+.content {
     width: 80%;
     background-color: white;
     padding: 20px;
@@ -155,96 +155,8 @@ li {
     border-radius: 20px;
     font-size: 20px;
 }
-/* Left side section */
-/* Profile */
-.profile-container{
-    display: block;
-}
-.picture-section{
-    display: block;
-}
-.picture-section > img{
-    width: 100%;
-    height: 150px;
-    border-radius: 20px;
-}
-
-.user{
-    display: flex;
-    /* border: 1px solid black; */
-    width: auto;
-    position: relative;
-    bottom: 70px;
-    left:25px;
-}
-.user .pic{
-    width: 15%;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: -50px;
-}
-.side-btn {
-    display: flex;
-    justify-content: space-around;
-}
-.side-btn a{
-    color: rgba(20, 183, 224, 0.9);
-    font-size: 15px;
-}
-.user img{
-    width: 100%;
-    border-radius: 20px;
-}
-.username{
-    position: relative;
-    top: 80px;
-    font-size: 30px;
-    margin-left: 5px;
-}
-
-.username .email{
-    color: black;
-    opacity: 0.3;
-    font-size: 25px;
-}
-
-.info{
-    border-bottom: 1px solid lightgray;
-    padding: 10px;
-    display: flex;
-    margin: 10px 18px;
-}
-.info-text input{
-    font-size: 18px;
-    padding: 0 5px;
-}
-.info-text p{
-    font-size: 20px;
-}
-.info-title{
-    width: 200px;
-    margin-right: 50px;
-    color: gray;
-}
-.info-content{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-}
-.btn a{
-    color: rgba(20, 183, 224, 0.9);
-    font-size: 15px;
-    border-bottom: 1px solid rgba(20, 183, 224, 0.9);
-    padding: 0;
-}
-
-.side-btn a,.btn a:hover{
-    cursor: pointer;
-}
-
 /* Side Bar */
-.side-bar{
+.side-bar {
     background-color: white;
     height: 50%;
     padding: 25px;
@@ -253,123 +165,74 @@ li {
     width: 15%;
 }
 
-[class^="title-"]{
+[class^="title-"] {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-li,[class^="title-"]:hover{
+li,
+[class^="title-"]:hover {
     cursor: pointer;
 }
 
-.side-bar li{
+.side-bar li {
     margin: 10px;
 }
 
-[class^="title-"] p{
+[class^="title-"] p {
     font-size: 20px;
 }
 
-.logout-section{
+.logout-section {
     color: orangered;
     font-size: 20px;
 }
 
-.logout-section i:hover{
+.logout-section i:hover {
     cursor: pointer;
 }
-
-/* Setting */
-.setting-container{
-    display: none;
-}
-
-.setting-container h2{
-    border-bottom: 1px solid lightgray;
-    padding: 10px 0;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.delete-section{
-    border-bottom: 1px solid lightgray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.delete-name{
-    padding: 20px 0;
-}
-
-.delete-name p{
-    text-transform: uppercase;
-    color: #CF222E;
-    padding: 5px 0;
-}
-
-.delete-name span{
-    color: black;
-    opacity: 0.5;
-    font-size: 15px;
-}
-
-.delete-btn button{
-    padding: 8px;
-    border-radius: 5px;
-    color: #CF222E;
-    background-color: #F6F8FA;
-    border: 1px solid black;
-    font-size: 15px;
-}
-
-.delete-btn button:hover{
-    background-color: #CF222E;
-    color: #F6F8FA;
-    cursor: pointer;
-}
-/* History */
-.history-container{
-    display: none;
-}
+/* Admin User */
 h2 {
     padding: 10px 0;
     text-transform: uppercase;
     text-align: center;
 }
-table{
+
+table {
     width: 100%;
 }
-tr,th,td {
+
+tr,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
     text-align: center;
 }
 
-/* Admin */
-.admin-container{
-    display: none;
-}
-
-td img{
+td img {
     width: 30%;
 }
-td button{
+
+td button {
     padding: 5px;
 }
-td button:hover{
+
+td button:hover {
     cursor: pointer;
 }
+
 /* Footer */
 .footer-1 img {
     width: 100%;
-}
+} 
 
 .footer-1 {
     position: relative;
 }
+
 .footer-1-content {
     background-color: #F3D27D;
     position: absolute;

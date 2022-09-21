@@ -115,8 +115,12 @@ function moveContact() {
 
 function moveProfile() {
     const profileBtn = document.querySelector('.btn-profile');
+    const settingBtn = document.querySelector('.btn-setting');
     profileBtn.addEventListener('click', () => {
-        location.href = 'http://localhost:3000/user'
+        location.href = 'http://localhost:3000/user/profile';
+    })
+    settingBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/user/setting';
     })
 }
 export {

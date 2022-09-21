@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcane Web Project</title>
-    <link rel="shortcut icon" href="./img/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="shortcut icon" href="../img/Icon.png" type="image/x-icon">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="../CSS/contact.css">
+    <title>Arcane Web Project</title>
 </head>
 
 <body>
@@ -59,15 +59,68 @@
             </div>
         </div>
     </div>
+
     <div id="main">
-        <div class="title">Contacts</div>
+        <div class="side-bar">
+            <div class="personal-section">
+                <div class="title-personal">
+                    <h3>Personal</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <ul class="personal-btn">
+                    <li>Profile</li>
+                    <li>History</li>
+                    <li>Setting</li>
+                </ul>
+            </div>
+            <div class="admin-section">
+                <div class="title-admin">
+                    <h3>Admin</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <ul class="admin-btn">
+                    <li>User Management</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <div class="logout-section">
+                <i class="fas fa-sign-out-alt">Log out</i>
+            </div>
+        </div>
         <div class="content">
-            <div class="content-text"></div>
-            <div class="background-eclipse">
-                <img src="../img/Main/Ellipse 7.png" alt="">
+            <div class="admin-container">
+                <div class="admin-user">
+                    <h2>User</h2>
+                    <table>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                            <th>Full Name</th>
+                            <th>Picture</th>
+                            <th>Function</th>
+                        </tr>
+                        <tr>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td>NULL</td>
+                            <td>Admin</td>
+                            <td>IMG</td>
+                            <td>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
     <div id="footer">
         <div class="footer-1">
             <img src="../img/footer.png" alt="">
@@ -124,6 +177,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 </body>
-<script type="module" src="../JS/contact.js"></script>
+<script type="module" src="../JS/admin_login.js"></script>
 
 </html>

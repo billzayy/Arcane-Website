@@ -150,8 +150,20 @@ app.get('/api/contact', (req, res) => {
 })
 
 // User
-app.get('/user', (req, res) => {
-    res.sendFile(__dirname + '/src/HTML/user.html');
+app.get('/user/profile', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/profile.html');
+})
+app.get('/user/history', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/history.html');
+})
+app.get('/user/setting', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/setting.html');
+})
+app.get('/admin/user_management', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/admin_login.html');
+})
+app.get('/admin/product_management', (req, res) => {
+    res.sendFile(__dirname + '/src/HTML/admin_product.html');
 })
 
 app.get('/api/user', (req, res) => {

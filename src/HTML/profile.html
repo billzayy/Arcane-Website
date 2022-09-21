@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/user.css">
-    <link rel="shortcut icon" href="./img/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link rel="shortcut icon" href="../img/Icon.png" type="image/x-icon">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>Arcane Web Project</title>
 </head>
@@ -28,7 +28,7 @@
             <div class="header-middle">
                 <a href="http://localhost:3000/" style="text-decoration:none; color: black">
                     <div class="logo-box">
-                        <img src="./img/Main/Logo.png" alt="" class="logo">
+                        <img src="../img/Main/Logo.png" alt="" class="logo">
                         <p>E-Commerce</p>
                     </div>
                 </a>
@@ -51,7 +51,7 @@
                         <div class="triangle"></div>
                         <ul>
                             <li class="btn-profile"><i class="fas fa-user"></i> Profile</li>
-                            <li><i class="fas fa-cog"></i>Settings</li>
+                            <li class="btn-setting"><i class="fas fa-cog"></i>Settings</li>
                             <li class="btn-logout"><i class="fas fa-arrow-alt-circle-right"></i>Log out</li>
                         </ul>
                     </div>
@@ -97,7 +97,8 @@
                     <img src="../img/Gradient.jpeg" alt="">  
                     <div class="user">
                         <div class="pic">
-                            <img src="../img/User/Bill .jpeg" alt="">
+                            <img>
+                            <input type="file">
                             <div class="side-btn">
                                 <a>Change</a>
                                 <a>Delete</a>
@@ -121,6 +122,7 @@
                             <div class="btn">
                                 <a class="edit-btn">Edit</a>
                                 <a class="save-btn">Save</a>
+                                <a class="info-delete-btn">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -134,6 +136,7 @@
                             <div class="btn">
                                 <a class="edit-btn">Edit</a>
                                 <a class="save-btn">Save</a>
+                                <a class="info-delete-btn">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -142,11 +145,12 @@
                         <div class="info-content">
                             <div class="info-text">
                                 <input type="text" value="test">
-                                <p>Test Content</p>
+                                <p>UserName</p>
                             </div>
                             <div class="btn">
                                 <a class="edit-btn">Edit</a>
                                 <a class="save-btn">Save</a>
+                                <a class="info-delete-btn">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -155,106 +159,15 @@
                         <div class="info-content">
                             <div class="info-text">
                                 <input type="password" value="test">
-                                <p>Test Content</p>
+                                <p>Password</p>
                             </div>
                             <div class="btn">
                                 <a class="edit-btn">Edit</a>
                                 <a class="save-btn">Save</a>
+                                <a class="info-delete-btn">Delete</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="setting-container">
-                <h2>Settings</h2>
-                <div class="delete-section">
-                    <div class="delete-name">
-                        <p>Delete Account</p>
-                        <span>Once you delete your account, there is no going back. Please be certain.
-                        </span>
-                    </div>
-                    <div class="delete-btn">
-                        <button>Delete your account</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="history-container">
-                <h2>History</h2>
-                <table>
-                    <tr>
-                        <th>Id_Bills</th>
-                        <th>Buy Dates</th>
-                        <th>Sum Price</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td>Id_Bills</td>
-                        <td>Buy Dates</td>
-                        <td>Sum Price</td>
-                        <td>Total</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Id_Bills</td>
-                        <td>Buy Dates</td>
-                        <td>Sum Price</td>
-                        <td>Total</td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="admin-container">
-                <div class="admin-user">
-                    <h2>User</h2>
-                    <table>
-                        <tr>
-                            <th>User Name</th>
-                            <th>Password</th>
-                            <th>Email</th>
-                            <th>Full Name</th>
-                            <th>Picture</th>
-                            <th>Function</th>
-                        </tr>
-                        <tr>
-                            <td>admin</td>
-                            <td>admin</td>
-                            <td>NULL</td>
-                            <td>Admin</td>
-                            <td>IMG</td>
-                            <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="admin-product">
-                    <h2>Product</h2>
-                    <table>
-                        <tr>
-                            <th>Id_Product</th>
-                            <th>Picture</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Function</th>
-                        </tr>
-                        <tr>
-                            <td>33</td>
-                            <td>
-                                <img src="../img/Catalogue/Arcane-fire.png" alt="">
-                            </td>
-                            <td>Arcane Fire</td>
-                            <td>13</td>
-                            <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
@@ -262,7 +175,7 @@
 
     <div id="footer">
         <div class="footer-1">
-            <img src="./img/footer.png" alt="">
+            <img src="../img/footer.png" alt="">
             <div class="footer-1-content">
                 <div class="footer-title">
                     <span>Subscribe</span> to our newsletter
@@ -291,7 +204,7 @@
                 </ul>
             </div>
             <div class="footer-content">
-                <img src="./img/Main/Logo.png" alt="">
+                <img src="../img/Main/Logo.png" alt="">
                 <p style="text-align:center;color: white; opacity: 0.3;">E-commerce</p>
             </div>
             <div class="footer-content">
@@ -316,6 +229,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 </body>
-<script type="module" src="./JS/user.js"></script>
+<script type="module" src="../JS/user.js"></script>
 
 </html>
