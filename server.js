@@ -153,24 +153,42 @@ app.get('/api/contact', (req, res) => {
 app.get('/user/profile', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/profile.html');
 })
+
+app.get('/api/profile/add/:idClient/:username/:fullname/:email/:password', (req, res) => {
+    var idClient = req.params['idClient'];
+    var userName = req.params['username'];
+    var fullName = req.params['fullname'];
+    var email = req.params['email'];
+    var password = req.params['password'];
+
+    sql.conSQL(`UPDATE Login SET UserName = '${userName}', Email = '${email}', Password = '${password}', FullName = '${fullName}' WHERE Id_Login = ${idClient}`, (recordset) => {
+        res.send(recordset);
+    })
+})
+
+app.get('/api/user/delete/:idClient', (req, res) => {
+    var idClient = req.params['idClient'];
+    sql.conSQL(`DELETE FROM Login Where Id_Login = ${idClient}`, (recordset) => {
+        res.send(recordset);
+    })
+})
+
 app.get('/user/history', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/history.html');
 })
+
 app.get('/user/setting', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/setting.html');
 })
+
 app.get('/admin/user_management', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/admin_login.html');
 })
+
 app.get('/admin/product_management', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/admin_product.html');
 })
 
-app.get('/api/user', (req, res) => {
-    sql.conSQL("Select * FROM Login", (recordset) => {
-        res.send(recordset)
-    })
-})
 app.listen(3000, () => {
     console.log("listening on 3000")
 })
