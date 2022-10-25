@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     alias.moveCart();
     alias.countCart();
     alias.moveContact();
+    alias.moveProfile();
 
     iconClick();
     showProduct();

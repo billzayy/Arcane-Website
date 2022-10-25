@@ -154,6 +154,8 @@ li {
     position: relative;
     border-radius: 20px;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
 /* Side Bar */
 .side-bar {
@@ -222,6 +224,101 @@ td button {
 
 td button:hover {
     cursor: pointer;
+}
+.admin-container {
+    width: 100%;
+}
+.btn-section{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-fill-section{
+    display: flex;
+    justify-content: center;
+}
+
+.add-btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    width: 10%;
+    text-align: center;
+    background-color: violet;
+    padding: 5px;
+}
+
+.add-fill-btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    width: 40%;
+    text-align: center;
+    background-color: violet;
+    padding: 5px;
+}
+
+.add-btn:hover, .add-fill-btn:hover{
+    cursor: pointer;
+}
+
+.add-btn:active, .add-fill-btn:active{
+    opacity: 0.8;
+}
+
+.fill-section{
+    display: none;
+    /* position: absolute; */
+    flex-wrap: wrap;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 45%;
+    z-index: 1;
+    padding: 10px;
+    background-color:lightgray;
+}
+
+.head-fill-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-section{
+    display: flex;
+}
+
+.fill-box{
+    margin: 10px;
+}
+
+.active{
+    display: flex;
+}
+.fill-box p{
+    color: black;
+    opacity: 0.5;
+}
+
+select{
+    height: 60%;
+    margin: 2px 0;
+    border-radius: 5px;
+}
+
+#fill-text-name{
+    padding: 5px;
+}
+
+#fill-text, .fill-text{
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+#fill-num{
+    padding: 5px;
 }
 
 /* Footer */

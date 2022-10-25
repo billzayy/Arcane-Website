@@ -42,6 +42,26 @@ app.get('/api/product', (req, res) => {
     })
 })
 
+app.get('/api/product/add/:name/:pic/:describe/:price/:page/:category/:gender/:sale/:material/:manufacture/:color/:content1/:content2', (req, res) => {
+    var name = req.params['name'];
+    var pic = req.params['pic'];
+    var describe = req.params['describe'];
+    var price = req.params['price'];
+    var page = req.params['page'];
+    var category = req.params['category'];
+    var gender = req.params['gender'];
+    var sale = req.params['sale'];
+    var material = req.params['material'];
+    var manufacture = req.params['manufacture'];
+    var color = req.params['color'];
+    var content1 = req.params['content1'];
+    var content2 = req.params['content2'];
+
+    sql.conSQL(`INSERT INTO Product(P_Name, P_Picture, P_Describe, P_Price, P_Page, P_Category, P_Gender, P_Sales, P_Material, P_Manufacture, P_Color, Content_1, Content_2) VALUES(${name},${pic},${describe},${price},${page},${category},${gender},${sale},${material},${manufacture},${color},${content1},${content2})`, (recordset) => {
+        res.send(recordset);
+    })
+})
+
 // Detail
 app.get('/detail', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/detail.html')
@@ -154,7 +174,7 @@ app.get('/user/profile', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/profile.html');
 })
 
-app.get('/api/profile/add/:idClient/:username/:fullname/:email/:password', (req, res) => {
+app.get('/api/profile/update/:idClient/:username/:fullname/:email/:password', (req, res) => {
     var idClient = req.params['idClient'];
     var userName = req.params['username'];
     var fullName = req.params['fullname'];
@@ -183,6 +203,23 @@ app.get('/user/setting', (req, res) => {
 
 app.get('/admin/user_management', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/admin_login.html');
+})
+
+app.get('/admin/user_management/add/:username/:fullname/:email/:password', (req, res) => {
+    var userName = req.params['username'];
+    var password = req.params['password'];
+    var email = req.params['email'];
+    var fullName = req.params['fullname'];
+    sql.conSQL(`INSERT INTO Login(UserName, Password, FullName, Email) VALUES('${userName}','${password}','${email}','${fullName}')`, recordset => {
+        res.send(recordset);
+    })
+})
+
+app.get('/admin/user_management/delete/:idClient', (req, res) => {
+    var idClient = req.params['idClient'];
+    sql.conSQL(`DELETE FROM Login Where Id_Login = ${idClient}`, recordset => {
+        res.send(recordset);
+    })
 })
 
 app.get('/admin/product_management', (req, res) => {

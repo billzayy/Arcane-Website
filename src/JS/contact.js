@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     alias.scrollPage();
     alias.moveCart();
     alias.countCart();
+    alias.moveProfile();
 
     showContact()
 })

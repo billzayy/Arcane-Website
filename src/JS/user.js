@@ -170,7 +170,7 @@ function addProfile() {
 
 async function addProfileAPI(username, fullname, email, password) {
     const idClient = sessionStorage.getItem('idClient');
-    await fetch(`http://localhost:3000/api/profile/add/${idClient}/${username}/${fullname}/${email}/${password}`)
+    await fetch(`http://localhost:3000/api/profile/update/${idClient}/${username}/${fullname}/${email}/${password}`)
     alert("Change Profile Successful !");
     window.location.reload();
 }

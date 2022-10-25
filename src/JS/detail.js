@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     funcs.moveCart();
     funcs.countCart();
     funcs.moveContact();
+    funcs.moveProfile();
     
     Detail();
     optContent();
