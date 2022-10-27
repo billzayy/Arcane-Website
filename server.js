@@ -222,6 +222,19 @@ app.get('/admin/user_management/delete/:idClient', (req, res) => {
     })
 })
 
+app.get('/admin/user_management/edit/:idClient/:name/:password/:fullName/:email', (req, res) => {
+    var idClient = req.params['idClient'];
+    var userName = req.params['name'];
+    var password = req.params['password'];
+    var fullName = req.params['fullName'];
+    var picture = req.params['picture'];
+    var email = req.params['email'];
+
+    sql.conSQL(`UPDATE Login SET UserName = '${userName}', Password = '${password}', FullName = '${fullName}', Email = '${email}' WHERE Id_Login = ${idClient}`, (recordset) => {
+        res.send(recordset);
+    })
+})
+
 app.get('/admin/product_management', (req, res) => {
     res.sendFile(__dirname + '/src/HTML/admin_product.html');
 })

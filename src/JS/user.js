@@ -159,16 +159,16 @@ function passwordHide() {
     passwordBox[passwordBox.length - 1].textContent = result;
 }
 
-function addProfile() {
+function editProfile() {
     const changeBox = document.querySelectorAll('.info-text input');
     const userName = changeBox[2].value;
     const fullName = changeBox[0].value;
     const email = changeBox[1].value;
     const password = changeBox[3].value;
-    addProfileAPI(userName, fullName, email, password);
+    editProfileAPI(userName, fullName, email, password);
 }
 
-async function addProfileAPI(username, fullname, email, password) {
+async function editProfileAPI(username, fullname, email, password) {
     const idClient = sessionStorage.getItem('idClient');
     await fetch(`http://localhost:3000/api/profile/update/${idClient}/${username}/${fullname}/${email}/${password}`)
     alert("Change Profile Successful !");

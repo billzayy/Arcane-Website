@@ -233,7 +233,7 @@ td button:hover {
     justify-content: flex-end;
 }
 
-.btn-fill-section{
+.btn-fill-section, .btn-edit-section{
     display: flex;
     justify-content: center;
 }
@@ -248,7 +248,16 @@ td button:hover {
     padding: 5px;
 }
 
-.add-fill-btn{
+.fa-arrow-left{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.fa-arrow-left:hover{
+    cursor: pointer;
+}
+
+.add-fill-btn, .save-edit-btn{
     border: 1px solid black;
     border-radius: 5px;
     color: white;
@@ -266,7 +275,7 @@ td button:hover {
     opacity: 0.8;
 }
 
-.fill-section{
+.fill-section, .edit-section{
     display: none;
     /* position: absolute; */
     flex-wrap: wrap;
@@ -289,14 +298,14 @@ td button:hover {
     display: flex;
 }
 
-.fill-box{
+.fill-box, .edit-box{
     margin: 10px;
 }
 
 .active{
     display: flex;
 }
-.fill-box p{
+.fill-box p, .edit-box p{
     color: black;
     opacity: 0.5;
 }
@@ -311,10 +320,11 @@ select{
     padding: 5px;
 }
 
-#fill-text, .fill-text{
+#fill-text, .fill-text, .edit-text{
     width: 100%;
     padding: 10px;
     word-wrap: break-word;
+    font-size: 18px;
 }
 
 #fill-num{
