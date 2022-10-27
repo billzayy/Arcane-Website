@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="shortcut icon" href="../img/Icon.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Arcane Web Project</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <div class="header-left">
+                <ul class="menu">
+                    <li>Clothes</li>
+                    <li>Deco</li>
+                    <li>Other</li>
+                </ul>
+                <div class="bars">
+                    <i class="fas fa-bars" style="font-size:20px"></i>
+                </div>
+            </div>
+    
+            <div class="header-middle">
+                <a href="http://localhost:3000/" style="text-decoration:none; color: black">
+                    <div class="logo-box">
+                        <img src="../img/Main/Logo.png" alt="" class="logo">
+                        <p>E-Commerce</p>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="header-right">
+                <div class="btn-search">
+                    <i class='fas fa-search'></i>
+                    <p class="button-text">Search</p>
+                </div>
+                <div class="btn-cart">
+                    <i class='fas fa-shopping-cart'></i>
+                    <p class="button-text">Cart</p>
+                    <span style="color: tomato"></span>
+                </div>
+                <div class="btn-user">
+                    <i class="far fa-user"></i>
+                    <p class="button-text user-box"></p>
+                    <div class="dropdown">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li class="btn-profile"><i class="fas fa-user"></i> Profile</li>
+                            <li class="btn-setting"><i class="fas fa-cog"></i>Settings</li>
+                            <li class="btn-logout"><i class="fas fa-arrow-alt-circle-right"></i>Log out</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="side-bar">
+            <div class="personal-section">
+                <div class="title-personal">
+                    <h3>Personal</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <ul class="personal-btn">
+                    <li>Profile</li>
+                    <li>History</li>
+                    <li>Setting</li>
+                </ul>
+            </div>
+            <div class="admin-section">
+                <div class="title-admin">
+                    <h3>Admin</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <ul class="admin-btn">
+                    <li>User Management</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <div class="logout-section">
+                <i class="fas fa-sign-out-alt">Log out</i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="fill-section">
+                <div class="head-fill-section">
+                    <div class="fill-box">
+                        <p class="fill-title">Name :</p>
+                        <input type="text" name="Input" id="fill-text-name">
+                    </div>
+                    <div class="fill-box">
+                        <p class="fill-title">Picture :</p>
+                        <input type="file" name="" id="fill-file">
+                    </div>
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Describe :</p>
+                    <input type="text" name="Input" id="fill-text">
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Price :</p>
+                    <input type="number" name="" id="fill-num">
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Page you want to show :</p>
+                    <select name="Page" id="fill-option">
+                        <option value="Main">Main</option>
+                        <option value="Catalogue">Catalogue</option>
+                    </select>
+                </div>
+                <div class="option-section">
+                    <div class="fill-box">
+                        <p class="fill-title">Category :</p>
+                        <select name="Category" id="fill-option">
+                            <option value="T-Shirt">T-Shirt</option>
+                        </select>
+                    </div>
+                    
+                    <div class="fill-box">
+                        <p class="fill-title">Gender :</p>
+                        <select name="" id="fill-option">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="fill-box">
+                        <p class="fill-title">Sales :</p>
+                        <select name="" id="fill-option">
+                            <option value="New">New</option>
+                            <option value="Top">Top</option>
+                            <option value="Sale">Sale</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Materials :</p>
+                    <input type="text" name="Input-Name" id="fill-text">
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Manufacture :</p>
+                    <input type="text" name="Input-Name" id="fill-text">
+                </div>
+                <div class="option-section">
+                    <div class="fill-box">
+                        <p class="fill-title">Color :</p>
+                        <select name="Page" id="fill-option">
+                            <option value="3D Print">3D Print</option>
+                        </select>
+                    </div>
+                    <div class="fill-box">
+                        <p class="fill-title">Size :</p>
+                        <select name="Category" id="fill-option">
+                            <option value="XXS">XXS</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Content (1) :</p>
+                    <input type="text" name="" id="fill-text">
+                </div>
+                <div class="fill-box">
+                    <p class = "fill-title">Content (2) :</p>
+                    <input type="text" name="" id="fill-text">
+                </div>
+                <div class="btn-fill-section">
+                    <p class="add-fill-btn">Add</p>
+                </div>
+            </div>
+            <div class="admin-container">
+                <div class="admin-product">
+                    <h2>Product</h2>
+                    <div class="btn-section">
+                        <p class="add-btn">Add</p>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id_Product</th>
+                                <th>Picture</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Function</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer-1">
+            <img src="../img/footer.png" alt="">
+            <div class="footer-1-content">
+                <div class="footer-title">
+                    <span>Subscribe</span> to our newsletter
+                </div>
+                <p>
+                    and get until <span>15%</span> off your first order
+                </p>
+                <input type="text" name="" id="box-text" placeholder="Email">
+            </div>
+        </div>
+        <div class="footer-2">
+            <div class="footer-content">
+                <div class="footer-content-title">Catalogue</div>
+                <ul>
+                    <li>Clothes</li>
+                    <li>Deco</li>
+                    <li>Other</li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-title">About</div>
+                <ul>
+                    <li>Customer Service</li>
+                    <li>Privacy policy</li>
+                    <li class="contact-btn">Contacts</li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <img src="../img/Main/Logo.png" alt="">
+                <p style="text-align:center;color: white; opacity: 0.3;">E-commerce</p>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-title">Support</div>
+                <ul>
+                    <li>Returns and Exchanges</li>
+                    <li>Order status</li>
+                    <li>Delivery</li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-title">Follow us</div>
+                <ul>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a class="scroll-link top-link-btn" href="#container">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+<script type="module" src="../JS/admin_product.js"></script>
+
+</html>

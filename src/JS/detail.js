@@ -8,6 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
     funcs.logoutAct();
     funcs.scrollPage();
     funcs.moveCart();
+    funcs.countCart();
+    funcs.moveContact();
+    funcs.moveProfile();
+    
     Detail();
     optContent();
 })
@@ -68,7 +72,7 @@ async function Detail() {
             contentMain.innerHTML = result;
             btnPrice(item.P_Price);
             btnSize();
-            // addCartBtn(item.Id_Product);
+            cartFeature(item.Id_Product);
         })
     })
 }
@@ -130,4 +134,45 @@ function optContent() {
             }
         })
     })
+}
+
+function cartFeature(id) {
+    const cartBtn = document.querySelector('.add-cart input')
+    const sizeBox = document.querySelector('.content-size span')
+    const quantityBox = document.querySelector('.price-btn #counter')
+
+    let idClient = parseInt(sessionStorage.getItem('idClient'))
+    let cartArr = [];
+    cartBtn.addEventListener('click', async () => {
+        if (Number.isNaN(idClient)) {
+            alert("Welcome Guest ! Please sign up or log in to buy our products !")
+            console.log("Nothing")
+        }
+        else {
+            const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+            const data = await res.json()
+            data.forEach((item) => {
+                cartArr.push(item.Id_Product)
+            })
+            if (cartArr.includes(id) == false) {
+                addToCart(idClient, id, quantityBox.value, sizeBox.textContent)
+            }
+            else {
+                updateCart(idClient, id, quantityBox.value, sizeBox.textContent)
+            }
+        }
+    })
+}
+
+async function addToCart(idClient, idProduct, quantity,size) {
+    await fetch(`http://localhost:3000/api/shoppingcart/add/${idClient}/${idProduct}/${quantity}/${size}`)
+    alert("Add to cart Successful !")
+    window.location.reload();
+}
+
+async function updateCart(idClient, idProduct, counter,size) {
+    const result = await fetch(`http://localhost:3000/api/shoppingcart/update/quantity/${idClient}/${idProduct}/${counter}/${size}`)
+    const dataset = await result.json()
+    console.log(dataset)
+    window.location.reload();
 }

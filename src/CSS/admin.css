@@ -123,225 +123,218 @@ li {
     border-bottom: 1px solid black;
     cursor: pointer;
 }
+
 #main {
-    padding-top: 6rem;
-    margin: 0 1rem;
-}
-
-.cart-title{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.cart-content{
+    padding: 6.5rem 0 4rem 0;
     display: flex;
-    justify-content:center;
-    padding: 10px;
+    background-color: lightgray;
+    justify-content: space-evenly;
 }
 
-.cart-content .cart-left{
-    border-top: 1px solid lightgray;
-}
-.cart-content .none-section{
-    font-size: 30px;
-    color: lightgray;
-    margin-top: 20px;
-}
-.cart-content section{
-    display: flex;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+.side-bar {
+    display: block;
 }
 
-.cart-content section > img{
-    width: 120px;
-    height: 120px;
+.open {
+    display: block;
 }
-.cart-content section > img:hover{
-    cursor: pointer;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
-}
-.id-product{
+
+.close {
     display: none;
 }
 
-.cart-product{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0 10px;
+.rotate-btn {
+    transform: rotate(180deg);
 }
 
-.cart-product-title{
-    /* border: 1px solid black; */
-    width: 45%;
-    height: 100%;
-    padding: 12px 0 0 10px;
-}
-
-.cart-name{
-    font-size: 25px;
-    font-weight: bold;
-}
-.cart-sub{
-    display: flex;
-}
-.cart-describe{
-    opacity: 0.3;
-}
-.cart-size{
-    display: flex;
-}
-
-.cart-size > p{
-    margin-left: 10px;
-    opacity: 0.3;
-}
-
-.cart-size .size-content{
-    color: black;
-    opacity: 1;
-    margin-left:2px;
-}
-
-.cart-product-price{
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price-btn{
+.content {
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: auto;
 }
-
-.price-btn>input {
+/* Side Bar */
+.side-bar {
+    background-color: white;
+    height: 50%;
+    padding: 25px;
+    border-radius: 30px;
+    opacity: 0.65;
     width: 15%;
-    text-align: center;
-    margin: 0 10px;
-    padding: 5px;
-    font-weight: bold;
-}
-.price-btn i{
-    padding: 5px;
 }
 
-.price-btn i:hover{
-    cursor: pointer;
-    border-radius: 50%;
-    animation: colorBtn infinite linear 1s;
-}
-
-@keyframes colorBtn {
-    0% {
-        background-color: #ffff;
-        color: black;
-    }
-
-    50% {
-        background-color: #F3D27D;
-        color: #8F1933;
-    }
-
-    100% {
-        background-color: #ffff;
-        color: black;
-    }
-}
-
-.btn-delete{
-    color: lightgray;
-}
-.go-back{
+[class^="title-"] {
     display: flex;
-    margin: 10px;
-    color: gray;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
-.go-back:hover{
+
+li,
+[class^="title-"]:hover {
     cursor: pointer;
 }
-.go-back i{
-    padding: 0 5px;
+
+.side-bar li {
+    margin: 10px;
 }
 
-.cart-summary{
-    background-color: #E9E9E9;
-    border: 1px solid black;
-    margin: 0 20px 0 40px;
-    padding: 15px;
-    width: 15%;
-    height: 120%;
-}
-.cart-summary > div{
-    margin: 5px 0 ;
-}
-
-/* Order */
-.order-title{
-    color: #8F1933;
-    font-weight: lighter;
-    letter-spacing: 2.5px;
+[class^="title-"] p {
     font-size: 20px;
 }
 
-.order-content{
-    font-size: 15px;
-    padding: 5px 0 0 0;
-}
-.order-content > div{
-    padding: 3px 0;
-}
-.order-total{
-    font-weight: bold;
-    /* border: 1px solid black; */
-    padding: 10px 0;
+.logout-section {
+    color: orangered;
+    font-size: 20px;
 }
 
-.order-total span{
-    color: #8F1933;
-}
-.btn-checkout{
-    padding: 10px;
-    display: flex;
-    justify-content:center;
-    background-color: #F3D27D;
-    border: 1px solid black;
-    width: 90%;
-    align-items: center;
-}
-
-.btn-checkout i{
-    margin-left: 10px;
-}
-
-.btn-checkout:hover{
-    background-image: linear-gradient(to right, violet, cyan);
+.logout-section i:hover {
     cursor: pointer;
-    animation: moveButton linear 1s infinite;
 }
-@keyframes moveButton {
-    0% {
-        width: 90%;
-    }
-
-    50% {
-        width: 100%;
-    }
-
-    100% {
-        width: 90%;
-    }
+/* Admin User */
+h2 {
+    padding: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
 }
+
+table {
+    width: 100%;
+}
+
+tr,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+td img {
+    width: 30%;
+}
+
+td button {
+    padding: 5px;
+}
+
+td button:hover {
+    cursor: pointer;
+}
+.admin-container {
+    width: 100%;
+}
+.btn-section{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-fill-section, .btn-edit-section{
+    display: flex;
+    justify-content: center;
+}
+
+.add-btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    width: 10%;
+    text-align: center;
+    background-color: violet;
+    padding: 5px;
+}
+
+.fa-arrow-left{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.fa-arrow-left:hover{
+    cursor: pointer;
+}
+
+.add-fill-btn, .save-edit-btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    width: 40%;
+    text-align: center;
+    background-color: violet;
+    padding: 5px;
+}
+
+.add-btn:hover, .add-fill-btn:hover{
+    cursor: pointer;
+}
+
+.add-btn:active, .add-fill-btn:active{
+    opacity: 0.8;
+}
+
+.fill-section, .edit-section{
+    display: none;
+    /* position: absolute; */
+    flex-wrap: wrap;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 45%;
+    z-index: 1;
+    padding: 10px;
+    background-color:lightgray;
+}
+
+.head-fill-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-section{
+    display: flex;
+}
+
+.fill-box, .edit-box{
+    margin: 10px;
+}
+
+.active{
+    display: flex;
+}
+.fill-box p, .edit-box p{
+    color: black;
+    opacity: 0.5;
+}
+
+select{
+    height: 60%;
+    margin: 2px 0;
+    border-radius: 5px;
+}
+
+#fill-text-name{
+    padding: 5px;
+}
+
+#fill-text, .fill-text, .edit-text{
+    width: 100%;
+    padding: 10px;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+#fill-num{
+    padding: 5px;
+}
+
 /* Footer */
 .footer-1 img {
     width: 100%;
-}
+} 
 
 .footer-1 {
     position: relative;

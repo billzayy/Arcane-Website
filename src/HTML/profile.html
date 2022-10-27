@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcane Web Project</title>
-    <link rel="shortcut icon" href="./img/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link rel="shortcut icon" href="../img/Icon.png" type="image/x-icon">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="../CSS/detail.css">
+    <title>Arcane Web Project</title>
 </head>
+
 <body>
     <div id="container">
         <div class="header">
@@ -22,7 +24,7 @@
                     <i class="fas fa-bars" style="font-size:20px"></i>
                 </div>
             </div>
-    
+
             <div class="header-middle">
                 <a href="http://localhost:3000/" style="text-decoration:none; color: black">
                     <div class="logo-box">
@@ -31,7 +33,7 @@
                     </div>
                 </a>
             </div>
-    
+
             <div class="header-right">
                 <div class="btn-search">
                     <i class='fas fa-search'></i>
@@ -40,7 +42,7 @@
                 <div class="btn-cart">
                     <i class='fas fa-shopping-cart'></i>
                     <p class="button-text">Cart</p>
-                    <span style="color: tomato">(11)</span>
+                    <span style="color: tomato"></span>
                 </div>
                 <div class="btn-user">
                     <i class="far fa-user"></i>
@@ -48,57 +50,48 @@
                     <div class="dropdown">
                         <div class="triangle"></div>
                         <ul>
-                            <li><i class="fas fa-user"></i> Profile</li>
-                            <li><i class="fas fa-cog"></i>Settings</li>
+                            <li class="btn-profile"><i class="fas fa-user"></i> Profile</li>
+                            <li class="btn-setting"><i class="fas fa-cog"></i>Settings</li>
                             <li class="btn-logout"><i class="fas fa-arrow-alt-circle-right"></i>Log out</li>
                         </ul>
                     </div>
                 </div>
             </div>
-    
         </div>
     </div>
-    <div id="main"></div>
-    <div id="opt">
-        <div class="opt-title">
-            <ul>
-                <li>Description</li>
-                <li>Size Guide</li>
-                <li>Usage Tips</li>
-            </ul>
-        </div>
-        <div class="opt-content">
-            <div class="describe-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis temporibus, nemo laborum vitae possimus porro
-                voluptatem, tenetur nisi explicabo aliquam dolores at est libero esse fugit pariatur ratione cumque.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis temporibus, nemo laborum vitae possimus porro
-                voluptatem, tenetur nisi explicabo aliquam dolores at est libero esse fugit pariatur ratione cumque.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure officiis temporibus, nemo laborum vitae possimus porro
-                voluptatem, tenetur nisi explicabo aliquam dolores at est libero esse fugit pariatur ratione cumque.</p>
-            </div>
-            <div class="size-guide-content">
-                <img src="../img/Size-guide-Herr-eng.jpeg" alt="">
-                <img src="../img/Size-guide-Dam-eng.jpeg" alt="">
-            </div>
-            <div class="usage-tip-content">
-                <section>
-                    <img src="../img/water.png" alt="">
-                    <div class="tips">
-                        Wash at a temperature not exceeding 40 degrees
+
+    <div id="main">
+        <div class="side-bar">
+            <div class="personal-section">
+                <div class="title-personal">
+                    <h3>Personal</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
                     </div>
-                </section>
-                <section>
-                    <img src="../img/avoid.png" alt="">
-                    <div class="tips">Do not use bleach</div>
-                </section>
-                <section>
-                    <img src="../img/laundry.png" alt="">
-                    <div class="tips">
-                        Iron at a temperature not exceeding 110 degrees
+                </div>
+                <ul class="personal-btn">
+                    <li>Profile</li>
+                    <li>History</li>
+                    <li>Setting</li>
+                </ul>
+            </div>
+            <div class="admin-section">
+                <div class="title-admin">
+                    <h3>Admin</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
                     </div>
-                </section>
+                </div>
+                <ul class="admin-btn">
+                    <li>User Management</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <div class="logout-section">
+                <i class="fas fa-sign-out-alt">Log out</i>
             </div>
         </div>
+        <div class="content"></div>
     </div>
 
     <div id="footer">
@@ -128,7 +121,7 @@
                 <ul>
                     <li>Customer Service</li>
                     <li>Privacy policy</li>
-                    <li>Contacts</li>
+                    <li class="contact-btn">Contacts</li>
                 </ul>
             </div>
             <div class="footer-content">
@@ -157,5 +150,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 </body>
-<script type="module" src="../JS/detail.js"></script>
+<script type="module" src="../JS/user.js"></script>
+
 </html>

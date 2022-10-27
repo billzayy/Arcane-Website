@@ -123,220 +123,72 @@ li {
     border-bottom: 1px solid black;
     cursor: pointer;
 }
+/* Main */
 #main {
     padding-top: 6rem;
-    margin: 0 1rem;
+    padding-bottom:5rem;
 }
 
-.cart-title{
+.title {
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
-    margin: 20px 0;
+    margin-bottom: 2rem;
 }
-
-.cart-content{
+.content{
+    position: relative;
+}
+.content-text{
     display: flex;
-    justify-content:center;
-    padding: 10px;
-}
-
-.cart-content .cart-left{
-    border-top: 1px solid lightgray;
-}
-.cart-content .none-section{
-    font-size: 30px;
-    color: lightgray;
-    margin-top: 20px;
-}
-.cart-content section{
-    display: flex;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
-}
-
-.cart-content section > img{
-    width: 120px;
-    height: 120px;
-}
-.cart-content section > img:hover{
-    cursor: pointer;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
-}
-.id-product{
-    display: none;
-}
-
-.cart-product{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    margin: 0 10px;
-}
-
-.cart-product-title{
-    /* border: 1px solid black; */
-    width: 45%;
-    height: 100%;
-    padding: 12px 0 0 10px;
-}
-
-.cart-name{
-    font-size: 25px;
-    font-weight: bold;
-}
-.cart-sub{
-    display: flex;
-}
-.cart-describe{
-    opacity: 0.3;
-}
-.cart-size{
-    display: flex;
-}
-
-.cart-size > p{
-    margin-left: 10px;
-    opacity: 0.3;
-}
-
-.cart-size .size-content{
-    color: black;
-    opacity: 1;
-    margin-left:2px;
-}
-
-.cart-product-price{
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price-btn{
-    display: flex;
     justify-content: center;
-    align-items: center;
-    width: auto;
+    margin: 10px 0;
 }
 
-.price-btn>input {
-    width: 15%;
-    text-align: center;
-    margin: 0 10px;
-    padding: 5px;
-    font-weight: bold;
-}
-.price-btn i{
-    padding: 5px;
+.content-left{
+    width: 50%;
+    margin-right: 2rem;
 }
 
-.price-btn i:hover{
-    cursor: pointer;
-    border-radius: 50%;
-    animation: colorBtn infinite linear 1s;
+.content-left img{
+    width: 100%;
 }
 
-@keyframes colorBtn {
-    0% {
-        background-color: #ffff;
-        color: black;
-    }
-
-    50% {
-        background-color: #F3D27D;
-        color: #8F1933;
-    }
-
-    100% {
-        background-color: #ffff;
-        color: black;
-    }
+.content-right{
+    width: 25%;
 }
 
-.btn-delete{
-    color: lightgray;
-}
-.go-back{
-    display: flex;
-    margin: 10px;
-    color: gray;
-}
-.go-back:hover{
-    cursor: pointer;
-}
-.go-back i{
-    padding: 0 5px;
-}
-
-.cart-summary{
-    background-color: #E9E9E9;
-    border: 1px solid black;
-    margin: 0 20px 0 40px;
-    padding: 15px;
-    width: 15%;
-    height: 120%;
-}
-.cart-summary > div{
-    margin: 5px 0 ;
-}
-
-/* Order */
-.order-title{
+.content-head{
     color: #8F1933;
-    font-weight: lighter;
-    letter-spacing: 2.5px;
-    font-size: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
-.order-content{
+[class^="section-"]{
+    margin-top: 1.5rem;
+}
+
+.content-title{
+    color: color;
+    opacity: 0.5;
     font-size: 15px;
-    padding: 5px 0 0 0;
+    margin-bottom: 0.5rem;
 }
-.order-content > div{
-    padding: 3px 0;
-}
-.order-total{
+.content-info{
+    font-size: 20px;
     font-weight: bold;
-    /* border: 1px solid black; */
-    padding: 10px 0;
 }
 
-.order-total span{
-    color: #8F1933;
-}
-.btn-checkout{
-    padding: 10px;
-    display: flex;
-    justify-content:center;
-    background-color: #F3D27D;
-    border: 1px solid black;
-    width: 90%;
-    align-items: center;
+.phone{
+    color:#0D96D1;
 }
 
-.btn-checkout i{
-    margin-left: 10px;
-}
-
-.btn-checkout:hover{
-    background-image: linear-gradient(to right, violet, cyan);
-    cursor: pointer;
-    animation: moveButton linear 1s infinite;
-}
-@keyframes moveButton {
-    0% {
-        width: 90%;
-    }
-
-    50% {
-        width: 100%;
-    }
-
-    100% {
-        width: 90%;
-    }
+.background-eclipse img{
+    position: absolute;
+    width: 45%;
+    right: 80px;
+    top: 5px;
+    z-index: -1;
 }
 /* Footer */
 .footer-1 img {

@@ -49,7 +49,7 @@ function logoutAct() {
     }
 
     logoutBtn.addEventListener('click', () => {
-        window.localStorage.removeItem("user");
+        sessionStorage.clear();
         window.location.href = "http://localhost:3000/login"
     })
 }
@@ -78,14 +78,58 @@ function scrollPage() {
 
 function moveCart() {
     cartBtn.addEventListener('click', () => {
-        location.href = "http://localhost:3000/cart"
+        if (sessionStorage.getItem('user') == null) {
+            alert("Please Sign in!!!");
+            location.reload();
+        }
+        else {
+            location.href = "http://localhost:3000/cart"
+        }
     })
 }
 
+async function countCart() {
+    const btnCart = document.querySelector('.btn-cart span')
+    let idClient = parseInt(sessionStorage.getItem('idClient'))
+    let sum = 0;
+    if (Number.isNaN(idClient)) {
+        // alert("Welcome Guest ! Please sign up or log in to buy our products !")
+        btnCart.innerHTML = ``
+    }
+    else {
+        const res = await fetch(`http://localhost:3000/api/shoppingcart/${idClient}`)
+        const data = await res.json()
+        data.forEach(i => {
+            sum = sum + i.Quantity;
+        })
+        btnCart.innerHTML = `(${sum})`
+    }
+}
+
+function moveContact() {
+    const contactBtn = document.querySelector('.contact-btn');
+    contactBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/contact'
+    })
+}
+
+function moveProfile() {
+    const profileBtn = document.querySelector('.btn-profile');
+    const settingBtn = document.querySelector('.btn-setting');
+    profileBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/user/profile';
+    })
+    settingBtn.addEventListener('click', () => {
+        location.href = 'http://localhost:3000/user/setting';
+    })
+}
 export {
     changeColorSale,
     setUser,
     logoutAct,
     scrollPage,
     moveCart,
+    countCart,
+    moveContact,
+    moveProfile
 }

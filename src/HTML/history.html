@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/cart.css">
-    <link rel="shortcut icon" href="./img/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/history.css">
+    <link rel="shortcut icon" href="../img/Icon.png" type="image/x-icon">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <title>Arcane Web Project</title>
 </head>
@@ -24,16 +24,16 @@
                     <i class="fas fa-bars" style="font-size:20px"></i>
                 </div>
             </div>
-
+    
             <div class="header-middle">
                 <a href="http://localhost:3000/" style="text-decoration:none; color: black">
                     <div class="logo-box">
-                        <img src="./img/Main/Logo.png" alt="" class="logo">
+                        <img src="../img/Main/Logo.png" alt="" class="logo">
                         <p>E-Commerce</p>
                     </div>
                 </a>
             </div>
-
+    
             <div class="header-right">
                 <div class="btn-search">
                     <i class='fas fa-search'></i>
@@ -50,8 +50,8 @@
                     <div class="dropdown">
                         <div class="triangle"></div>
                         <ul>
-                            <li><i class="fas fa-user"></i> Profile</li>
-                            <li><i class="fas fa-cog"></i>Settings</li>
+                            <li class="btn-profile"><i class="fas fa-user"></i> Profile</li>
+                            <li class="btn-setting"><i class="fas fa-cog"></i>Settings</li>
                             <li class="btn-logout"><i class="fas fa-arrow-alt-circle-right"></i>Log out</li>
                         </ul>
                     </div>
@@ -61,32 +61,69 @@
     </div>
 
     <div id="main">
-        <div class="cart-title">Shopping Cart</div>
-        <div class="cart-content">
-            <div class="cart-left"></div>
-            <div class="cart-summary">
-                <div class="order-title"> Order Summary</div>
-                <div class="order-content">
-                    <div class="order-items"> Items : <span></span> </div>
-                    <div class="order-delivery"> Delivery : <span>FREE</span> </div>
-                    <div class="order-discount"> Discount : $<span>1</span> </div>
+        <div class="side-bar">
+            <div class="personal-section">
+                <div class="title-personal">
+                    <h3>Personal</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
                 </div>
-                <div class="order-total">Total cost : <span>$14</span></div>
-                <div class="btn-checkout">
-                    Checkout <i class="fas fa-arrow-right"></i>
-                </div>
+                <ul class="personal-btn">
+                    <li>Profile</li>
+                    <li>History</li>
+                    <li>Setting</li>
+                </ul>
             </div>
-           
+            <div class="admin-section">
+                <div class="title-admin">
+                    <h3>Admin</h3>
+                    <div class="arrow">
+                        <i class="fas fa-caret-up"></i>
+                    </div>
+                </div>
+                <ul class="admin-btn">
+                    <li>User Management</li>
+                    <li>Product Management</li>
+                </ul>
+            </div>
+            <div class="logout-section">
+                <i class="fas fa-sign-out-alt">Log out</i>
+            </div>
         </div>
-        <div class="go-back">
-            <i class="fas fa-long-arrow-alt-left"></i>
-            <p>Go to Catalogue</p>
+        <div class="content">
+            <div class="history-container">
+                <h2>History</h2>
+                <table>
+                    <tr>
+                        <th>Id_Bills</th>
+                        <th>Buy Dates</th>
+                        <th>Sum Price</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Id_Bills</td>
+                        <td>Buy Dates</td>
+                        <td>Sum Price</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Id_Bills</td>
+                        <td>Buy Dates</td>
+                        <td>Sum Price</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
     <div id="footer">
         <div class="footer-1">
-            <img src="./img/footer.png" alt="">
+            <img src="../img/footer.png" alt="">
             <div class="footer-1-content">
                 <div class="footer-title">
                     <span>Subscribe</span> to our newsletter
@@ -111,11 +148,11 @@
                 <ul>
                     <li>Customer Service</li>
                     <li>Privacy policy</li>
-                    <li>Contacts</li>
+                    <li class="contact-btn">Contacts</li>
                 </ul>
             </div>
             <div class="footer-content">
-                <img src="./img/Main/Logo.png" alt="">
+                <img src="../img/Main/Logo.png" alt="">
                 <p style="text-align:center;color: white; opacity: 0.3;">E-commerce</p>
             </div>
             <div class="footer-content">
@@ -140,6 +177,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 </body>
-<script type="module" src="./JS/cart.js"></script>
+<script type="module" src="../JS/history.js"></script>
 
 </html>
