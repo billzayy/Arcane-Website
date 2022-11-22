@@ -116,11 +116,14 @@
                 </div>
                 <div class="fill-box">
                     <p class="fill-title">Picture :</p>
-                    <input type="file" name="Picture" class="fill-text">
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="images" class="fill-text">
+                        <input type="submit" value="Submit" class="add-fill-btn">
+                    </form>
                 </div>
-                <div class="btn-fill-section">
+                <!-- <div class="btn-fill-section">
                     <p class="add-fill-btn">Add</p>
-                </div>
+                </div> -->
             </div>
             <div class="edit-section">
                 <div class="edit-content"></div>
