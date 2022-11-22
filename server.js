@@ -1,7 +1,19 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
 const app = express();
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./src/img/User");
+    },
+    filename: (req, file, cb) => {
+        console.log(file)
+        cb(null, path.basename(file.originalname));
+    }
+})
+
+const upload = multer({ storage: storage });
 // Import files
 const sql = require('./sql')
 
@@ -233,6 +245,10 @@ app.get('/admin/user_management/edit/:idClient/:name/:password/:fullName/:email'
     sql.conSQL(`UPDATE Login SET UserName = '${userName}', Password = '${password}', FullName = '${fullName}', Email = '${email}' WHERE Id_Login = ${idClient}`, (recordset) => {
         res.send(recordset);
     })
+})
+
+app.post('/upload', upload.single("images"), (req, res) => {
+    res.send(req.file.filename)
 })
 
 app.get('/admin/product_management', (req, res) => {
